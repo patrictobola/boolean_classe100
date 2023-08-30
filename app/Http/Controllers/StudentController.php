@@ -61,6 +61,8 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+
+        return to_route('home');
     }
 }

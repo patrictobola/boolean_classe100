@@ -25,10 +25,16 @@
                         <td>{{ $student->last_name }}</td>
                         <td>{{ $student->birth }}</td>
                         <td>{{ $student->city }}</td>
-                        <td>
+                        <td class="d-flex align-items-center justify-content-end">
                             <a href="#" class="btn btn-primary">Show</a>
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <a href="#" class="btn btn-warning ms-2">Edit</a>
+
+                            <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
+                                data-name="{{ $student->id }}">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Cancella</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
