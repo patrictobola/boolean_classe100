@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class StudentController extends Controller
 {
@@ -12,9 +13,10 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        // dd($request);
-        $filtered_students = $request->query();
-        $students = Student::all();
+        if ($request->first_name) {
+            $filtered_students = $request->query('first_name');
+            $students = Student::where('first_name', 'LIKE', "%$filtered_students%")->get();
+        } else $students = Student::all();
         return view('home', compact('students'));
     }
 
