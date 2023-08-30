@@ -29,7 +29,7 @@
                         <td class="d-flex align-items-center justify-content-end">
                             <form action="{{ route('students.restore', $student) }}" method="Post" class="delete-form ms-2"
                                 data-name="{{ $student->first_name }}">
-                                @method('restore')
+                                @method('patch')
                                 @csrf
                                 <button type="submit" class="btn btn-success">Rispristina</button>
                             </form>
