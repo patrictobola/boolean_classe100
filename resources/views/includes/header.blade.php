@@ -31,8 +31,9 @@
                     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form action="{{ route('students.index') }}" method="GET" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" name="first_name" placeholder="Search"
+                    aria-label="Search" value="{{ $search_value }}">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
