@@ -1,9 +1,5 @@
 @extends('layouts.main')
 
-@section('header')
-    @include('includes.header')
-@endsection
-
 @section('main')
     <div class="container mt-5">
         <table class="table">
@@ -29,26 +25,23 @@
                         <td class="d-flex align-items-center justify-content-end">
                             <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
                             <a href="{{ route('students.edit', $student) }}" class="btn btn-warning ms-2">Edit</a>
-                            <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
-                                data-name="{{ $student->first_name }}">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Cancella</button>
-                            </form>
+                            <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Delete
+                            </button>
+
                         </td>
                     </tr>
                 @endforeach
 
             </tbody>
         </table>
-        <div class="container d-flex justify-content-between">
-            <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
-            <a class="btn btn-danger " href="{{ route('students.trash') }}">Trash can</a>
+        <div class="container">
+            <a class="btn btn-danger " href="{{ route('students.trash') }}">Cestino</a>
         </div>
     </div>
 @endsection
 
 @section('scripts')
-    @vite('resources/js/form-delete.js')
     @vite('resources/js/form-restore.js')
 @endsection
