@@ -26,7 +26,6 @@
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-between">
-                    <a class="btn btn-primary" href="{{ route('home') }}">Back to Home</a>
                     <a href="{{ route('students.edit', $student) }}" class="btn btn-warning">Edit Student</a>
                     <form action="{{ route('students.destroy', $student) }}" method="post" class="delete-form"
                         data-name="{{ $student->id }}">
