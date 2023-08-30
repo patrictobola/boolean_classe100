@@ -30,7 +30,7 @@
                             <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
                             <a href="{{ route('students.edit', $student) }}" class="btn btn-warning ms-2">Edit</a>
                             <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
-                                data-name="{{ $student->id }}">
+                                data-name="{{ $student->first_name }}">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Cancella</button>
@@ -45,4 +45,8 @@
             <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/form-delete.js')
 @endsection
