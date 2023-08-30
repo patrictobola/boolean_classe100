@@ -98,9 +98,9 @@ class StudentController extends Controller
 
 
 
-    public function trash(Student $student)
+    public function trash()
     {
-        $students = [];
+        $students = Student::onlyTrashed()->get();
         return view('students.trash', compact('students'));
     }
 }
