@@ -48,7 +48,11 @@
             </tbody>
         </table>
         <div class="container d-flex justify-content-between">
-            <a class="btn btn-danger" href="#">Elimina tutto</a>
+            <form action="{{ route('students.deleteAll') }}" method="Post" class="restore-all-form ms-2">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Elimina tutto</button>
+            </form>
             <form action="{{ route('students.restoreAll') }}" method="Post" class="restore-all-form ms-2">
                 @method('put')
                 @csrf
