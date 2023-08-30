@@ -32,8 +32,8 @@ class StudentController extends Controller
         $data = $request->all();
         $student = new Student();
         $request->validate([
-            'first_name' => 'required|string|unique=students',
-            'last_name' => 'required|string|unique=students',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
             'birth' => 'required|string',
             'city' => 'required|string'
         ]);
