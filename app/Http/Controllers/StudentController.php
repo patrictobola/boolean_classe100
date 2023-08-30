@@ -112,4 +112,13 @@ class StudentController extends Controller
             ->with('alert-type', 'success')
             ->with('alert-message', "Lo studente $student->first_name $student->last_name è stato ripristinato con successo");
     }
+
+
+    public function restoreAll()
+    {
+        Student::onlyTrashed()->restore();
+        return to_route('students.trash')
+            ->with('alert-type', 'success')
+            ->with('alert-message', "Hai ripristinato con successo tutti gli studenti");
+    }
 }
