@@ -10,8 +10,10 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // dd($request);
+        $filtered_students = $request->query();
         $students = Student::all();
         return view('home', compact('students'));
     }
