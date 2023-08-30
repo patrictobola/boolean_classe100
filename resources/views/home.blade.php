@@ -26,7 +26,7 @@
                         <td>{{ $student->birth }}</td>
                         <td>{{ $student->city }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">Show</a>
+                            <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
                             <a href="#" class="btn btn-warning">Edit</a>
                             <a href="#" class="btn btn-danger">Delete</a>
                         </td>
