@@ -14,6 +14,7 @@
         @yield('header')
     </header>
     <main>
+        @include('includes.alert')
         @yield('main')
     </main>
 
