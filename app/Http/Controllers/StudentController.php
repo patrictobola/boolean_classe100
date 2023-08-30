@@ -29,7 +29,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $student = new Student();
+        $request->validate([
+            'first_name' => 'required|string|unique=students',
+            'last_name' => 'required|string|unique=students',
+            'birth' => 'required|string',
+            'city' => 'required|string'
+        ]);
+        $student->fill($data);
+        $student->save();
+        return to_route('home');
     }
 
     /**
@@ -45,7 +55,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
