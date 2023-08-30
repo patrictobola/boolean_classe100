@@ -117,8 +117,14 @@ class StudentController extends Controller
     public function restoreAll()
     {
         Student::onlyTrashed()->restore();
-        return to_route('students.trash')
+        return to_route('students.index')
             ->with('alert-type', 'success')
             ->with('alert-message', "Hai ripristinato con successo tutti gli studenti");
+    }
+
+    public function deleteAll()
+    {
+        Student::onlyTrashed()->forceDelete();
+        return to_route('students.index');
     }
 }
