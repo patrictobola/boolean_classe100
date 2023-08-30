@@ -27,13 +27,17 @@
                         <td>{{ $student->city }}</td>
 
                         <td class="d-flex align-items-center justify-content-end">
-                            <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
-                            <a href="{{ route('students.edit', $student) }}" class="btn btn-warning ms-2">Edit</a>
+                            <form action="{{ route('students.restore', $student) }}" method="Post"
+                                class="restore-form ms-2" data-name="{{ $student->first_name }}">
+                                @method('patch')
+                                @csrf
+                                <button type="submit" class="btn btn-success">Rispristina</button>
+                            </form>
                             <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
                                 data-name="{{ $student->first_name }}">
                                 @method('delete')
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Cancella</button>
+                                <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
                             </form>
                         </td>
                     </tr>
@@ -42,12 +46,18 @@
             </tbody>
         </table>
         <div class="container d-flex justify-content-between">
-            <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
-            <a class="btn btn-primary " href="#">Trash can</a>
+            <a class="btn btn-danger" href="#">Elimina tutto</a>
+            <form action="{{ route('students.restoreAll') }}" method="Post" class="restore-all-form ms-2">
+                @method('put')
+                @csrf
+                <button type="submit" class="btn btn-success">Ripristina tutto</button>
+            </form>
         </div>
     </div>
 @endsection
 
 @section('scripts')
     @vite('resources/js/form-delete.js')
+    @vite('resources/js/form-restore.js')
+    @vite('resources/js/form-restore-all.js')
 @endsection
