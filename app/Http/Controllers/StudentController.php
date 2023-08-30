@@ -100,6 +100,7 @@ class StudentController extends Controller
 
     public function trash(Student $student)
     {
-        return view('students.trash');
+        $students = [];
+        return view('students.trash', compact('students'));
     }
 }
