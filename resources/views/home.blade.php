@@ -29,12 +29,11 @@
                         <td class="d-flex align-items-center justify-content-end">
                             <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
                             <a href="{{ route('students.edit', $student) }}" class="btn btn-warning ms-2">Edit</a>
-                            <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
-                                data-name="{{ $student->first_name }}">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Cancella</button>
-                            </form>
+                            <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Delete
+                            </button>
+
                         </td>
                     </tr>
                 @endforeach
@@ -46,8 +45,4 @@
             <a class="btn btn-danger " href="{{ route('students.trash') }}">Trash can</a>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    @vite('resources/js/form-delete.js')
 @endsection
