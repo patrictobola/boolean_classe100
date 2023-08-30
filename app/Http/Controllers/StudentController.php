@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class StudentController extends Controller
@@ -91,9 +92,8 @@ class StudentController extends Controller
 
 
 
-    public function trash(string $id)
+    public function trash(Student $student)
     {
-
-        return view(route('students.trash'));
+        return view('students.trash');
     }
 }
