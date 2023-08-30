@@ -88,4 +88,12 @@ class StudentController extends Controller
 
         return to_route('home');
     }
+
+
+
+    public function trash(string $id)
+    {
+
+        return view(route('students.trash'));
+    }
 }
