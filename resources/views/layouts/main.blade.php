@@ -14,6 +14,7 @@
         @include('includes.header')
     </header>
     <main>
+        @include('includes.modal')
         @include('includes.alert')
         @yield('main')
     </main>
