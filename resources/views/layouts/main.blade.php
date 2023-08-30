@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <header>
+        @yield('header')
+    </header>
     <main>
         @yield('main')
     </main>
