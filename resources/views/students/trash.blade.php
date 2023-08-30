@@ -47,7 +47,11 @@
         </table>
         <div class="container d-flex justify-content-between">
             <a class="btn btn-danger" href="#">Elimina tutto</a>
-            <a class="btn btn-success" href="">Rispristina tutto</a>
+            <form action="{{ route('students.restoreAll') }}" method="Post" class="restore-form ms-2">
+                @method('put')
+                @csrf
+                <button type="submit" class="btn btn-success">Ripristina tutto</button>
+            </form>
         </div>
     </div>
 @endsection
