@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        @yield('header')
+        @include('includes.header')
     </header>
     <main>
         @include('includes.alert')
