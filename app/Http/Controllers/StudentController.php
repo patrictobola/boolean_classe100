@@ -13,11 +13,12 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->first_name) {
+        $search_value = $request->first_name;
+        if ($search_value) {
             $filtered_students = $request->query('first_name');
             $students = Student::where('first_name', 'LIKE', "%$filtered_students%")->get();
         } else $students = Student::all();
-        return view('home', compact('students'));
+        return view('home', compact('students', 'search_value'));
     }
 
     /**
