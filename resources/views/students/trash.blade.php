@@ -27,12 +27,12 @@
                         <td>{{ $student->city }}</td>
 
                         <td class="d-flex align-items-center justify-content-end">
-                            {{-- <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
+                            <form action="{{ route('students.restore', $student) }}" method="Post" class="delete-form ms-2"
                                 data-name="{{ $student->first_name }}">
-                                @method('delete')
-                                @csrf --}}
-                            <button type="submit" class="btn btn-primary">Rispristina</button>
-                            {{-- </form> --}}
+                                @method('restore')
+                                @csrf
+                                <button type="submit" class="btn btn-success">Rispristina</button>
+                            </form>
                             <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
                                 data-name="{{ $student->first_name }}">
                                 @method('delete')
@@ -47,7 +47,7 @@
         </table>
         <div class="container d-flex justify-content-between">
             <a class="btn btn-danger" href="#">Elimina tutto</a>
-            <a class="btn btn-primary" href="">Rispristina tutto</a>
+            <a class="btn btn-success" href="">Rispristina tutto</a>
         </div>
     </div>
 @endsection
