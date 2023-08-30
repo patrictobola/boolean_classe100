@@ -1,9 +1,5 @@
 @extends('layouts.main')
 
-@section('header')
-    @include('includes.header')
-@endsection
-
 @section('main')
     <div class="container mt-5">
         <table class="table">
@@ -41,9 +37,8 @@
 
             </tbody>
         </table>
-        <div class="container d-flex justify-content-between">
-            <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
-            <a class="btn btn-danger " href="{{ route('students.trash') }}">Trash can</a>
+        <div class="container">
+            <a class="btn btn-danger " href="{{ route('students.trash') }}">Cestino</a>
         </div>
     </div>
 @endsection
