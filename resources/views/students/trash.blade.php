@@ -43,7 +43,7 @@
         </table>
         <div class="container d-flex justify-content-between">
             <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
-            <a class="btn btn-danger " href="{{ route('students.trash') }}">Trash can</a>
+            <a class="btn btn-primary " href="#">Trash can</a>
         </div>
     </div>
 @endsection

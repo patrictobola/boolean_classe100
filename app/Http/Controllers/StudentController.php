@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class StudentController extends Controller
@@ -93,5 +94,12 @@ class StudentController extends Controller
         return to_route('home')
             ->with('alert-type', 'success')
             ->with('alert-message', "Lo studente $student->first_name $student->last_name è stato eliminato con successo");
+    }
+
+
+
+    public function trash(Student $student)
+    {
+        return view('students.trash');
     }
 }
