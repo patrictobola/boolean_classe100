@@ -63,7 +63,15 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $data = $request->all();
+        $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'birth' => 'required|string',
+            'city' => 'required|string'
+        ]);
+        $student->update();
+        return to_route('comic.show', compact('student'));
     }
 
     /**
