@@ -86,6 +86,8 @@ class StudentController extends Controller
     {
         $student->delete();
 
-        return to_route('home');
+        return to_route('home')
+            ->with('alert-type', 'success')
+            ->with('alert-message', "Lo studente $student->first_name $student->last_name è stato eliminato con successo");
     }
 }
