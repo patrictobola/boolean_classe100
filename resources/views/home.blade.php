@@ -50,4 +50,5 @@
 
 @section('scripts')
     @vite('resources/js/form-delete.js')
+    @vite('resources/js/form-restore.js')
 @endsection

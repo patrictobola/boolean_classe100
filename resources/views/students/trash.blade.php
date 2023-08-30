@@ -27,8 +27,8 @@
                         <td>{{ $student->city }}</td>
 
                         <td class="d-flex align-items-center justify-content-end">
-                            <form action="{{ route('students.restore', $student) }}" method="Post" class="delete-form ms-2"
-                                data-name="{{ $student->first_name }}">
+                            <form action="{{ route('students.restore', $student) }}" method="Post"
+                                class="restore-form ms-2" data-name="{{ $student->first_name }}">
                                 @method('patch')
                                 @csrf
                                 <button type="submit" class="btn btn-success">Rispristina</button>
@@ -58,4 +58,5 @@
 
 @section('scripts')
     @vite('resources/js/form-delete.js')
+    @vite('resources/js/form-restore.js')
 @endsection
