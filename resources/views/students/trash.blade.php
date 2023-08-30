@@ -33,7 +33,7 @@
                                 data-name="{{ $student->first_name }}">
                                 @method('delete')
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Cancella</button>
+                                <button type="submit" class="btn btn-danger">Elimina definitivamente</button>
                             </form>
                         </td>
                     </tr>
@@ -42,8 +42,7 @@
             </tbody>
         </table>
         <div class="container d-flex justify-content-between">
-            <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
-            <a class="btn btn-primary " href="#">Trash can</a>
+            <a class="btn btn-danger" href="#">Elimina tutto</a>
         </div>
     </div>
 @endsection
