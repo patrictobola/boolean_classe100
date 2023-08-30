@@ -44,7 +44,9 @@ class StudentController extends Controller
         ]);
         $student->fill($data);
         $student->save();
-        return to_route('home');
+        return to_route('home')
+            ->with('alert-type', 'success')
+            ->with('alert-message', "Lo studente $student->first_name $student->last_name è stato create con successo");
     }
 
     /**
@@ -76,7 +78,9 @@ class StudentController extends Controller
             'city' => 'required|string'
         ]);
         $student->update();
-        return to_route('comic.show', compact('student'));
+        return to_route('comic.show', compact('student'))
+            ->with('alert-type', 'success')
+            ->with('alert-message', "Lo studente $student->first_name $student->last_name è stato modificato con successo");
     }
 
     /**
