@@ -28,7 +28,7 @@
 
                         <td class="d-flex align-items-center justify-content-end">
                             <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
-                            <a href="{{ route('students.edit', $student) }}" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('students.edit', $student) }}" class="btn btn-warning ms-2">Edit</a>
                             <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
                                 data-name="{{ $student->id }}">
                                 @method('delete')
