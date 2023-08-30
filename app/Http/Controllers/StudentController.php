@@ -70,6 +70,8 @@ class StudentController extends Controller
             'birth' => 'required|string',
             'city' => 'required|string'
         ]);
+        $student->update();
+        return to_route('comic.show', compact('student'));
     }
 
     /**
