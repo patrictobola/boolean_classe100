@@ -11,12 +11,14 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
-                    data-name="{{ $student->first_name }}">
-                    @method('delete')
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Cancella</button>
-                </form>
+                @if ($student)
+                    <form action="{{ route('students.destroy', $student) }}" method="Post" class="delete-form ms-2"
+                        data-name="{{ $student->first_name }}">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Cancella</button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

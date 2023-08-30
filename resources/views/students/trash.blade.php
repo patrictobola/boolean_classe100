@@ -6,6 +6,7 @@
 
 @section('main')
     <div class="container mt-5">
+
         <table class="table">
             <thead>
                 <tr>
@@ -41,6 +42,7 @@
                             </form>
                         </td>
                     </tr>
+                    @include('includes.modal')
                 @endforeach
 
             </tbody>
