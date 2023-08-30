@@ -36,7 +36,7 @@
             </tbody>
         </table>
         <div class="container">
-            <a class="btn btn-primary" href="#">Create new student</a>
+            <a class="btn btn-primary" href="{{ route('students.create') }}">Create new student</a>
         </div>
     </div>
 @endsection
