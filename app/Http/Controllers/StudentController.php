@@ -103,4 +103,13 @@ class StudentController extends Controller
         $students = Student::onlyTrashed()->get();
         return view('students.trash', compact('students'));
     }
+
+    public function restore(string $id)
+    {
+        $student = Student::onlyTrashed()->findOrFail($id);
+        $student->restore();
+        return to_route('students.trash')
+            ->with('alert-type', 'success')
+            ->with('alert-message', "Lo studente $student->first_name $student->last_name è stato ripristinato con successo");
+    }
 }

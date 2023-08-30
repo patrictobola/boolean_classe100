@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/students/trash', [StudentController::class, 'trash'])->name('students.trash');
 Route::resource('students', StudentController::class);
 Route::get('/', [StudentController::class, 'index'])->name('home');
+Route::patch('/students/{student}/restore', [StudentController::class, 'restore'])->name('students.restore');
