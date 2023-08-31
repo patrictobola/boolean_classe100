@@ -30,10 +30,10 @@
                                 data-bs-target="#exampleModal">
                                 Delete
                             </button>
+                            @include('includes.modal')
 
                         </td>
                     </tr>
-                    @include('includes.modal')
                 @endforeach
 
             </tbody>
