@@ -27,7 +27,7 @@
                             <a href="{{ route('students.show', $student) }}" class="btn btn-primary">Show</a>
                             <a href="{{ route('students.edit', $student) }}" class="btn btn-warning ms-2">Edit</a>
                             <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                                data-bs-target="#{{ $student->id }}">
                                 Delete
                             </button>
                             @include('includes.modal')
